@@ -1,10 +1,15 @@
-import { IDisplay } from '../../types/Display';
+
+import { useSelector } from 'react-redux';
+import { getDisplayValue } from '../../Redux/Reducers/displayValue';
 import * as Styles from './Display.styles';
 
-function Display({result}: IDisplay) {
+function Display() {
+
+    let result  = useSelector(getDisplayValue);
+
     return (
         <Styles.Display>
-            <Styles.Result>{result}</Styles.Result>
+            <Styles.Result>{result === "" ? "0" : result}</Styles.Result>
         </Styles.Display>
     )
 }

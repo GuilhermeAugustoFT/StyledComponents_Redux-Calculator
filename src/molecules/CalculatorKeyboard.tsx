@@ -1,13 +1,18 @@
-import Button from "../../atoms/Button";
+import { useDispatch } from "react-redux";
+import Button from "../atoms/Button";
+import { changeDisplayValue } from "../Redux/Reducers/displayValue";
+import { changeOperator } from "../Redux/Reducers/operator";
 import * as Styles from "./CalculatorKeyboard.styles";
 
+
 function CalculatorKeyboard() {
+  const dispath = useDispatch();
   const handleButtonClick = (value: string) => {
-    console.log(value);
+    dispath(changeDisplayValue(value));
   };
 
   const handleOperatorButtonClick = (operator: string) => {
-    alert("Operator: " + operator);
+    dispath(changeOperator(operator));
   };
 
   return (

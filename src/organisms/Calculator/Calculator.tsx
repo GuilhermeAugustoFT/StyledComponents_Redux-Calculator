@@ -4,9 +4,11 @@ import CalculatorKeyboard from "../../molecules/CalculatorKeyboard";
 import * as Styles from "./Calculator.styles";
 
 function Calculator() {
+
+
   return (
     <Styles.Container>
-      <Display result="0" />
+      <Display />
       <CalculatorKeyboard />
     </Styles.Container>
   );
